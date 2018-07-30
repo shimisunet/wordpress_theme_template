@@ -8,8 +8,7 @@ module.exports = {
   dev: {
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../www/html/wp-content/themes/shimisunet'),
-    assetsSubDirectory: 'assets',
+    assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -47,8 +46,8 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    assetsRoot: path.resolve(__dirname, '../www/html/wp-content/themes/shimisunet'),
+    assetsSubDirectory: 'assets',
     assetsPublicPath: '/',
 
     /**
