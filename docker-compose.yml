@@ -1,0 +1,32 @@
+version: "3"
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: shimisunet_wp
+    ports:
+      - "6001:80"
+    volumes:
+      - ./www/html/wp-content:/var/www/html/wp-content
+    links:
+      - mysql
+    environment:
+      WORDPRESS_DB_HOST: "mysql:3306"
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: hogehoge
+  mysql:
+    image: mysql:5.6
+    container_name: shimisunet_mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - db-data:/var/lib/mysql
+    working_dir: /var/sql
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: hogehoge
+volumes:
+    db-data:
+      driver: local
