@@ -12,7 +12,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'article',
+  name: 'Single',
   data () {
     return {
     }
