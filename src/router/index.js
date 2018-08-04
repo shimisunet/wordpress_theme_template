@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Store from '@/store'
 
 import List from '@/components/list'
-import Article from '@/components/article'
+import Single from '@/components/Single'
 
 Vue.use(Router)
 
@@ -14,16 +14,12 @@ export default new Router({
     {
       path: '/',
       name: 'list',
-      component: List,
-      beforeEnter: (to, from, next) => {
-        Store.dispatch('posts/fetchPosts')
-          .then(() => { next() })
-      }
+      component: List
     },
     {
       path: '/article/:id',
-      name: 'article',
-      component: Article,
+      name: 'Single',
+      component: Single,
       beforeEnter: (to, from, next) => {
         const id = to.params['id']
         Store.dispatch('posts/fetchPosts', id)
