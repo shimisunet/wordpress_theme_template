@@ -2,6 +2,7 @@
   <div>
     <article id="article">
       <h2>{{ posts.title.rendered }}</h2>
+      <p>Date：{{ posts.date }}</p>
       <div v-html="posts.content.rendered"></div>
     </article>
   </div>
