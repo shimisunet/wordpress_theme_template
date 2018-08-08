@@ -34,6 +34,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.item {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
 .thumbnail {
   width: 100%;
   max-width: 400px;
