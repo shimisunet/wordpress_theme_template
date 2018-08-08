@@ -3,7 +3,7 @@
     <article id="article">
       <h2>{{ posts.title.rendered }}</h2>
       <p>Date：{{ posts.date }}</p>
-      <div v-html="posts.content.rendered"></div>
+      <div v-html="posts.content.rendered"/>
     </article>
   </div>
 
@@ -14,13 +14,12 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Single',
-  data () {
-    return {
-    }
+  data() {
+    return {}
   },
   computed: {
     ...mapGetters({
-      'posts': 'posts/posts'
+      posts: 'posts/posts'
     })
   }
 }

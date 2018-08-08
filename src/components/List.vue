@@ -1,6 +1,6 @@
 <template>
-  <div class="post_list" v-if="posts && posts.length">
-    <div class="item" v-for="(post, index) of posts" :key="index">
+  <div v-if="posts && posts.length" class="post_list">
+    <div v-for="(post, index) of posts" :key="index" class="item">
       <router-link :to="`/article/${ post.id }`">{{ post.title.rendered }}</router-link>
     </div>
   </div>
@@ -10,14 +10,15 @@
 import axios from 'axios'
 
 export default {
-  name: 'list',
-  data () {
+  name: 'List',
+  data() {
     return {
       posts: []
     }
   },
-  created () {
-    axios.get('http://shimisu.net/wp-json/wp/v2/posts/')
+  created() {
+    axios
+      .get('http://shimisu.net/wp-json/wp/v2/posts/')
       .then(response => {
         this.posts = response.data
       })
