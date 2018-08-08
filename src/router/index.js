@@ -22,8 +22,9 @@ export default new Router({
       component: Single,
       beforeEnter: (to, from, next) => {
         const id = to.params['id']
-        Store.dispatch('posts/fetchPosts', id)
-          .then(() => { next() })
+        Store.dispatch('posts/fetchPosts', id).then(() => {
+          next()
+        })
       }
     }
   ]

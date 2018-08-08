@@ -1,6 +1,6 @@
 <template>
-  <div class="post_list" v-if="posts && posts.length">
-    <div class="item" v-for="(post, index) of posts" :key="index">
+  <div v-if="posts && posts.length" class="post_list">
+    <div v-for="(post, index) of posts" :key="index" class="item">
       <div v-if="post._embedded['wp:featuredmedia']">
         <img :src="post._embedded['wp:featuredmedia'][0].source_url" alt="" class="">
       </div>
@@ -13,14 +13,15 @@
 import axios from 'axios'
 
 export default {
-  name: 'list',
-  data () {
+  name: 'List',
+  data() {
     return {
       posts: []
     }
   },
-  created () {
-    axios.get('http://shimisu.net/wp-json/wp/v2/posts?_embed&per_page=100')
+  created() {
+    axios
+      .get('http://shimisu.net/wp-json/wp/v2/posts?_embed&per_page=100')
       .then(response => {
         this.posts = response.data
       })

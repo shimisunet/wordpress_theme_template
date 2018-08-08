@@ -9,19 +9,19 @@ const stateObject = {
 }
 
 const getters = {
-  posts (state) {
+  posts(state) {
     return state.posts
   }
 }
 
 const mutations = {
-  SAVE_POSTS (state, posts) {
+  SAVE_POSTS(state, posts) {
     state.posts = posts
   }
 }
 
 const actions = {
-  'fetchPosts': ({ state, commit }, id) => {
+  fetchPosts: ({ commit }, id) => {
     const _id = id ? `/${id}` : ''
 
     return api.get(`/posts${_id}`).then(res => {
