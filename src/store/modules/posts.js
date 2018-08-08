@@ -21,7 +21,7 @@ const mutations = {
 }
 
 const actions = {
-  fetchPosts: ({ state, commit }, id) => {
+  fetchPosts: ({ commit }, id) => {
     const _id = id ? `/${id}` : ''
 
     return api.get(`/posts${_id}`).then(res => {
