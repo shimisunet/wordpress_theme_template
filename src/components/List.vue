@@ -41,8 +41,7 @@ export default {
 .thumbnail {
   width: 100%;
   max-width: 400px;
-  height: 100%;
-  max-height: 300px;
-  object-fit: contain;
+  height: 300px;
+  object-fit: cover;
 }
 </style>
