@@ -2,7 +2,7 @@
   <div v-if="posts && posts.length" class="post_list">
     <div v-for="(post, index) of posts" :key="index" class="item">
       <div v-if="post._embedded['wp:featuredmedia']">
-        <img :src="post._embedded['wp:featuredmedia'][0].source_url" alt="" class="">
+        <img :src="post._embedded['wp:featuredmedia'][0].source_url" alt="" class="thumbnail">
       </div>
       <router-link :to="`/article/${ post.id }`">{{ post.title.rendered }}</router-link>
     </div>
@@ -31,3 +31,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.thumbnail {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+</style>
