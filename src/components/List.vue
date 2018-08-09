@@ -4,7 +4,7 @@
       <div v-if="post._embedded['wp:featuredmedia']">
         <img :src="post._embedded['wp:featuredmedia'][0].source_url" alt="" class="thumbnail">
       </div>
-      <router-link :to="`/article/${ post.id }`">{{ post.title.rendered }}</router-link>
+      <a :href="`/article/${ post.id }`">{{ post.title.rendered }}</a>
       <time>{{ post.date }}</time>
     </div>
   </div>
